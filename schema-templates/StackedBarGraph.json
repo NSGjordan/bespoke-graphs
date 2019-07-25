@@ -1,5 +1,5 @@
 //should add max value for placeholder images 
-
+//test fork
 Highcharts.chart('container', {
 //following section is for loading data 
     title: {
