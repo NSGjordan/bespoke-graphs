@@ -1,0 +1,83 @@
+//should add max value for placeholder images 
+
+Highcharts.chart('container', {
+//following section is for loading data 
+    title: {
+    //this where the graph title goes
+        text: 'Graph 1: This is a test stacked bar graph',
+            style: {
+     					 		fontFamily: "sans-serif",
+      						fontSize: "19px",
+      						fontWeight: "bold"
+    						}
+    },
+   series: [{
+    //name of first variable (series name)
+        name: 'Taxes on income',
+        //variable data values go in array below
+        data: [201, 299, 161, 470, 611, 217, 159, 577, 805, 612, 688, 539, 108, 29],
+        //colour of bar
+        color: '#3d9dd1'
+    }, {
+    //name of second variable  (series name)
+        name: 'Taxes on production',
+        //second variable data values go in array below
+        data: [113, 131, 114, 205, 229, 217, 160, 217, 269, 272, 326, 282, 173, 94],
+        //colour of second bar
+        color: '#134a71'
+    }],
+    xAxis: {
+    //this is where categories for x-axis goes
+        categories: ['Lone person under 35', 
+        						'Lone person 35 to 64', 
+                    'Lone person 55 to 64', 
+                    'Couple only, reference person under 35', 
+                    'Couple only, reference person 35 to 54', 
+                    'Couple only, reference person 55 to 64', 
+                    'One parent family with dependent children', 
+                    'One parent family with dependent children', 
+                    'Couple with dependent children only <br/> –youngest child aged under 5',
+                    'Couple with dependent children only <br/> –youngest child aged 15 and above', 
+                    'Couple with dependent and <br/>non–dependent children only', 
+                    'Couple with non–dependent children only',
+                    'Couple only, reference person 65 and over', 
+                    'Lone person 65 and over']
+    },
+    yAxis: {
+    //min value goes here
+
+					tickInterval: 200,
+          min: 0,
+        title: {
+        //y-axis label goes here 
+            text: '$ per week'
+        }
+    },
+    chart: {
+    //bar or column as type
+        type: 'bar'
+    },
+		legend: {
+    	reversed: true    
+    },
+    tooltip: {
+        headerFormat: '<b>{point.x}</b><br/>',
+        pointFormat: '{series.name}: ${point.y}<br/>Total: ${point.stackTotal}'
+    },
+    plotOptions: {
+    //bar or column below: should correspond to type of graph type
+        bar: {
+            stacking: 'normal',
+            dataLabels: {
+                enabled: true,
+            		 				//formating for data labels on bar
+                       	style: { 
+                        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", 													"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;',
+                        fontSize:'0.8rem',
+                        fontWeight: 600
+    						}
+            }, 
+        }
+    },
+    
+});
